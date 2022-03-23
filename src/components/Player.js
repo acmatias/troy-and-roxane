@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import ReactAudioPlayer from 'react-audio-player'
 
 const Player = ({ songs, currentSong, setCurrentSong, isPlaying, setIsPlaying }) => {
     // ref
@@ -57,18 +58,6 @@ const Player = ({ songs, currentSong, setCurrentSong, isPlaying, setIsPlaying })
         background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
     }
 
-    // const skipTrackHandler = (direction) => {
-    //     let currentIndex = songs.findIndex((song) => song.id === currentSong.id)
-    //     if (direction === 'skip-forward') {
-    //         setCurrentSong(songs[(currentIndex + 1) % songs.length])
-    //     } else if (direction === 'skip-back') {
-    //         if ((currentIndex - 1) % songs.length === -1) {
-    //             setCurrentSong(songs[songs.length - 1])
-    //             return
-    //         }
-    //         setCurrentSong(songs[(currentIndex - 1) % songs.length])
-    //     }
-    // }
     const skipTrackHandler = (direction) => {
         let currentSongIndex = songs.findIndex((song) => song.id === currentSong.id)
         if (direction === 'skip-forward') {
@@ -120,6 +109,7 @@ const Player = ({ songs, currentSong, setCurrentSong, isPlaying, setIsPlaying })
                 />
             </div>
             <audio
+                autoPlay
                 onLoadedData={autoPlayHandler}
                 onTimeUpdate={timeUpdateHandler}
                 onLoadedMetadata={timeUpdateHandler}
