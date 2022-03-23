@@ -1,0 +1,44 @@
+@import './song.scss';
+@import './player.scss';
+@import './library.scss';
+@import './nav.scss';
+@import './banner.scss';
+
+// fonts
+@font-face {
+    font-family: 'amsterdam-one-regular';
+    src: url('../fonts/AmsterdamOne.ttf');
+}
+@font-face {
+    font-family: 'amsterdam-one-slant-regular';
+    src: url('../fonts/AmsterdamOneSlant.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('../Images/background.png');
+}
+h1,
+h2,
+h3 {
+    color: #3a3a3a;
+}
+body {
+    font-family: 'Lato', sans-serif;
+}
+h3,
+h4 {
+    font-weight: 400;
+    color: rgb(100, 100, 100);
+}
+
+.App {
+    transition: all 0.5s ease;
+}
+
+.library-active {
+    margin-left: 10%;
+}

@@ -1,0 +1,96 @@
+// .banner {
+//     position: absolute;
+// }
+.flower {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 110vh;
+    background: url('../Images/headingflower.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    z-index: 10;
+}
+
+.flowerCircle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 150vh;
+    background: url('../Images/banner8bit.png');
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position: center;
+    background-size: contain;
+    z-index: 9;
+
+    .heading {
+        padding-left: 15%;
+        padding-bottom: 5%;
+        font-family: 'Alegreya', serif;
+        background-image: none;
+        h1 {
+            background-image: none;
+        }
+    }
+    .title {
+        padding-left: 10%;
+        padding-bottom: 5%;
+        font-family: 'amsterdam-one-slant-regular';
+        font-size: 35px;
+        background-image: none;
+        h1 {
+            background-image: none;
+        }
+    }
+    .date {
+        padding-left: 15%;
+        font-family: 'Alegreya', serif;
+        background-image: none;
+        h1 {
+            background-image: none;
+        }
+    }
+}
+.flowerBottom {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    min-height: 60vh;
+    background: url('../Images/headingflower.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    z-index: 10;
+    transform: rotate(-180deg);
+}
+.ps {
+    display: flex;
+    justify-content: center;
+    font-family: 'amsterdam-one-regular';
+    background-image: none;
+    h1 {
+        background-image: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .flowerCircle {
+        height: 70vh;
+        .title {
+            font-size: 15px;
+        }
+    }
+    .flowerBottom {
+        background-position: top center;
+    }
+    .ps {
+        h1 {
+            font-size: 20px;
+        }
+    }
+}
