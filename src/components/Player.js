@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import ReactAudioPlayer from 'react-audio-player'
+import { motion } from 'framer-motion'
 
 const Player = ({ songs, currentSong, setCurrentSong, isPlaying, setIsPlaying }) => {
     // ref
@@ -85,28 +85,34 @@ const Player = ({ songs, currentSong, setCurrentSong, isPlaying, setIsPlaying })
                 <p>{getTime(songInfo.duration || 0)}</p>
             </div>
             <div className="play-control">
-                <FontAwesomeIcon
-                    onClick={() => {
-                        skipTrackHandler('skip-back')
-                    }}
-                    className="skip-back"
-                    size="2x"
-                    icon={faAngleLeft}
-                />
-                <FontAwesomeIcon
-                    onClick={playSongHandler}
-                    className="play"
-                    size="2x"
-                    icon={isPlaying ? faPause : faPlay}
-                />
-                <FontAwesomeIcon
-                    onClick={() => {
-                        skipTrackHandler('skip-forward')
-                    }}
-                    className="skip-forward"
-                    size="2x"
-                    icon={faAngleRight}
-                />
+                <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.3 }}>
+                    <FontAwesomeIcon
+                        onClick={() => {
+                            skipTrackHandler('skip-back')
+                        }}
+                        className="skip-back"
+                        size="2x"
+                        icon={faAngleLeft}
+                    />
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.3 }}>
+                    <FontAwesomeIcon
+                        onClick={playSongHandler}
+                        className="play"
+                        size="2x"
+                        icon={isPlaying ? faPause : faPlay}
+                    />
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.3 }}>
+                    <FontAwesomeIcon
+                        onClick={() => {
+                            skipTrackHandler('skip-forward')
+                        }}
+                        className="skip-forward"
+                        size="2x"
+                        icon={faAngleRight}
+                    />
+                </motion.div>
             </div>
             <audio
                 autoPlay

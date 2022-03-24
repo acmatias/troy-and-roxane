@@ -72,6 +72,7 @@
 @media screen and (max-width: 768px) {
     .library {
         width: 100%;
+        z-index: 10;
     }
     .song-description {
         h3 {

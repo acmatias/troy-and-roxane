@@ -19,24 +19,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: url('../Images/background.png');
-}
-h1,
-h2,
-h3 {
-    color: #3a3a3a;
-}
-body {
-    font-family: 'Lato', sans-serif;
-}
-h3,
-h4 {
-    font-weight: 400;
-    color: rgb(100, 100, 100);
-}
 
-.App {
-    transition: all 0.5s ease;
+    h1,
+    h2,
+    h3 {
+        color: #3a3a3a;
+    }
+    body {
+        font-family: 'Lato', sans-serif;
+    }
+    h3,
+    h4 {
+        font-weight: 400;
+        color: rgb(100, 100, 100);
+    }
+
+    .App {
+        transition: all 0.5s ease;
+        background: url('../Images/background.png');
+    }
 }
 
 .library-active {
