@@ -4,11 +4,6 @@ import AnimatedText from './AnimatedText'
 // import { useInView } from 'react-intersection-observer'
 
 const Banner = () => {
-    // const [ref, inView] = useInView({
-    //     threshold: 0.5,
-    //     // triggerOnce: true
-    // })
-
     // Define headline animations
     const [replay, setReplay] = useState(true)
     // Placeholder text data, as if from API
@@ -20,12 +15,12 @@ const Banner = () => {
             },
         },
     }
-    const handleReplay = () => {
-        setReplay(!replay)
-        setTimeout(() => {
-            setReplay(true)
-        }, 600)
-    }
+    // const handleReplay = () => {
+    //     setReplay(!replay)
+    //     setTimeout(() => {
+    //         setReplay(true)
+    //     }, 600)
+    // }
 
     const headline = {
         hidden: { opacity: 0, y: -15 },
