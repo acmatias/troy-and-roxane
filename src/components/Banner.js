@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import AnimatedText from './AnimatedText'
 // import { useInView } from 'react-intersection-observer'
 
 const Banner = () => {
@@ -9,6 +10,23 @@ const Banner = () => {
     // })
 
     // Define headline animations
+    const [replay, setReplay] = useState(true)
+    // Placeholder text data, as if from API
+    const placeholderText = [{ type: 'heading1', text: 'Troy & Roxane' }]
+    const container = {
+        visible: {
+            transition: {
+                staggerChildren: 0.025,
+            },
+        },
+    }
+    const handleReplay = () => {
+        setReplay(!replay)
+        setTimeout(() => {
+            setReplay(true)
+        }, 600)
+    }
+
     const headline = {
         hidden: { opacity: 0, y: -15 },
         visible: {
@@ -46,7 +64,18 @@ const Banner = () => {
                     <h1>Save The Date</h1>
                 </div>
                 <div className="title">
-                    <motion.h1 variants={headline}>Troy & Roxane</motion.h1>
+                    <motion.div
+                        initial="hidden"
+                        // animate="visible"
+                        animate={replay ? 'visible' : 'hidden'}
+                        variants={container}
+                    >
+                        <div className="container">
+                            {placeholderText.map((item, index) => {
+                                return <AnimatedText {...item} key={index} />
+                            })}
+                        </div>
+                    </motion.div>
                 </div>
                 <div className="date">
                     <h1>22.10.2022</h1>
